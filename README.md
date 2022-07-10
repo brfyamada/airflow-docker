@@ -1,7 +1,12 @@
 # Airflow configuring and running project
 
 
-* First of all run the next command:
+* First of all run the next commands in the project path:
+
+```bash
+mkdir -p ./logs ./plugins
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+```
 
 ```bash
 $ docker-compose up airflow-init
