@@ -34,6 +34,15 @@ def sleep_func(**kwargs):
 
 with DAG('dag_params_example', start_date=dt(2022,8,7), schedule_interval='0 0 * * *', catchup = False) as dag :
     
+    tis= "{{ ts }}"
+    dis= "{{ ds }}"
+    dis_nodash = "{{ ds_nodash }}"
+    d_i_s = "{{ data_interval_start }}"
+    d_i_e = "{{ data_interval_end }}" 
+    
+    print("ds = {}, ts = {}, ds_nodash = {}, d_i_s = {}, d_i_e = {}".format(dis, tis, dis_nodash, d_i_s, d_i_e))
+    
+    
     #Examplo using Datarun in templates
     catch_show_param = BashOperator(
         task_id = 'dag_params_example',
